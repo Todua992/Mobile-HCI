@@ -1,0 +1,642 @@
+[
+  {
+    "id": "q1",
+    "category": "Mobile challenges",
+    "topic": "input expressiveness",
+    "lecture": "L2 mobile challenges (Griggio); CommandBoard, Alvina et al. UIST '17",
+    "difficulty": "medium",
+    "question": "According to Griggio's four mobile challenges (L2), what is the defining consequence of 'limited input expressiveness' on mobile devices, and what technique was motivated to address it?",
+    "options": [
+      "Because a single gesture (e.g., a swipe) must be reused for many commands, interaction becomes overloaded and ambiguous; CommandBoard was designed to create a general-purpose command-gesture input space for soft keyboards.",
+      "Because the finger occludes the small touch target, pointing precision drops; CommandBoard was designed to enlarge touch targets per Fitts' Law.",
+      "Because there is no room for menus, functions are hidden in deep hierarchies; CommandBoard was designed to improve menu navigation.",
+      "Because variable contexts cause interruptions, attention is divided; CommandBoard was designed to reschedule notifications to receptive moments."
+    ],
+    "correctIndex": 0,
+    "explanation": "Limited input expressiveness means mobile devices lack the mouse's fine-grained control and the keyboard's combinatorial power, leaving a narrow set of inputs (tap, double-tap, swipe). The key consequence is interaction overloading: one gesture must carry many commands, creating ambiguity and discoverability problems. This motivated CommandBoard (Alvina et al., UIST '17), a general-purpose command-gesture input space for soft keyboards. Option B describes the separate occlusion/Fat-Finger challenge (and CommandBoard is not a target-enlarging technique). Option C describes the reduced-screen-real-estate challenge (hidden functions / navigation). Option D describes variable contexts of use / interruptions. Each is a distinct challenge, so attaching the wrong consequence or technique is the error."
+  },
+  {
+    "id": "q2",
+    "category": "Mobile challenges",
+    "topic": "Benyon challenges",
+    "lecture": "L1/L2 'Challenges (Benyon)' slide; Benyon Ch.19 Mobile Computing",
+    "difficulty": "easy",
+    "question": "On the 'Challenges (Benyon)' slide, the first challenge states that because of the small screen it is difficult to achieve a particular design principle. Which principle is named?",
+    "options": [
+      "Visibility",
+      "Consistency",
+      "Recognition rather than recall",
+      "Reuse"
+    ],
+    "correctIndex": 0,
+    "explanation": "Benyon's slide explicitly states: 'Because of the small screen it is difficult to achieve the design principle of visibility' (reduced screen real estate undermines visibility). Consistency and 'recognition rather than recall' are two of Nielsen's 10 heuristics, not the principle Benyon names on this slide. Reuse is one of Beaudouin-Lafon & Mackay's three principles (reification, polymorphism, reuse), which is a separate lecture artifact and not what the small-screen challenge threatens."
+  },
+  {
+    "id": "q3",
+    "category": "Mobile challenges",
+    "topic": "situational impairment",
+    "lecture": "Sarsenbayeva et al. OzCHI '17; L9 impairment types; L2 variable contexts",
+    "difficulty": "hard",
+    "question": "A commuter cannot type accurately on her phone because her hands are stiff in freezing weather, while glare from low winter sun also makes the screen hard to read. Which classification of these difficulties is correct per the course material?",
+    "options": [
+      "Both are situational impairments arising from variable contexts of use, and are temporary and context-induced rather than permanent disabilities.",
+      "Both are permanent impairments because the body's capability is reduced, the same category WalkType was designed for.",
+      "The cold hands are a situational impairment, but the sun glare is a technical context-of-use problem with the device.",
+      "Both are temporary impairments in the Microsoft Inclusive Design sense, equivalent to having an arm in a cast."
+    ],
+    "correctIndex": 0,
+    "explanation": "Cold hands impairing typing and sunlight reducing screen visibility are both canonical situational impairments (Sarsenbayeva et al., OzCHI '17): impairments induced by the situation/context, temporary and environment-driven, and the concrete mechanism behind 'variable contexts of use.' Option B is wrong: these are not permanent disabilities; WalkType (Goel et al.) targets situational impairment from walking, also not permanent. Option C misclassifies glare: a situational impairment is environmentally induced reduced ability, distinct from a 'technical' context (which concerns other devices/networks/interoperability, not weather). Option D confuses situational with temporary: a cast is a temporary impairment (a short-term bodily condition), whereas these are situational (context-induced), a distinction the persona-spectrum framing keeps separate."
+  },
+  {
+    "id": "q4",
+    "category": "Contexts of use",
+    "topic": "task",
+    "lecture": "L3 Context and Field Studies (ISO 13407 contexts of use)",
+    "difficulty": "medium",
+    "question": "Within the ISO contexts of use, the distinctions 'primary vs. secondary' and 'foreground vs. background' interaction belong to which context type, and what is the underlying concern they describe?",
+    "options": [
+      "The temporal context; they describe whether the interaction happens in real time (synchronous) or asynchronously",
+      "The task context; they describe how the user's task competes for and demands attention relative to surrounding tasks",
+      "The physical context; they describe whether the device is held in the hand or placed in the environment",
+      "The social context; they describe whether the user interacts alone or in front of other people"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per the ISO contexts of use, the task context covers surrounding tasks relative to the user's task: multitasking, interruptions, task domain, work vs. leisure, and specifically the primary-vs-secondary and foreground-vs-background distinctions, all of which are fundamentally about demands on the user's ATTENTION. Temporal (distractor A) is about TIME only (synchronism, time of day, hurried/normal/waiting) and is a classic misclassification trap. Physical (C) is about the environment and the user's body, not which task is in focus. Social (D) is about other people present, not the primary/secondary task split."
+  },
+  {
+    "id": "q5",
+    "category": "Contexts of use",
+    "topic": "context classification",
+    "lecture": "L3 Context and Field Studies (ISO 13407 contexts of use)",
+    "difficulty": "hard",
+    "question": "A user is reviewing a privacy nudge on their phone, but the phone's microphone is broken so voice confirmation fails. Separately, they cannot type accurately because their hands are cold from standing outside. According to the ISO contexts-of-use taxonomy, the broken microphone and the cold hands respectively illustrate which contexts?",
+    "options": [
+      "Both illustrate the physical context, since both concern the device and the body",
+      "Broken microphone = technical context; cold hands = physical context",
+      "Broken microphone = physical context; cold hands = temporal context",
+      "Broken microphone = technical context; cold hands = task context"
+    ],
+    "correctIndex": 1,
+    "explanation": "A broken/damaged device component (the microphone) is a TECHNICAL context issue (the relevant systems, devices, sensors, and infrastructure available) — a key trap is wrongly calling a damaged mic 'physical.' Cold hands is a PHYSICAL context issue, since physical context includes the user's body and its capabilities/limitations (finger range) plus weather; cold-hand typing is the canonical situational-impairment example tied to physical conditions. Option A wrongly lumps the technical device fault into physical. Option C makes the classic mic-as-physical error and treats cold hands as temporal (temporal = TIME-only). Option D wrongly assigns cold hands to task (task = attention demands of surrounding/competing tasks, not bodily condition)."
+  },
+  {
+    "id": "q6",
+    "category": "Contexts of use",
+    "topic": "artifact ecologies",
+    "lecture": "L7 Digital Ecosystems (Griggio et al., Customizations & Expression Breakdowns)",
+    "difficulty": "hard",
+    "question": "In the Digital Ecosystems lecture, a 'walled garden' is said to lock in two specific things, which in turn cause 'expression breakdowns.' Which option correctly identifies BOTH locked-in things and the resulting breakdown?",
+    "options": [
+      "It locks in screen real estate and battery life, causing situational impairments when the user multitasks across apps",
+      "It locks in contacts/people and functionality/features, causing interruptions to conversation flow when the user needs another app's functionality to express their message",
+      "It locks in the device's sensors and networks, causing reduced ecological validity in field studies of the ecology",
+      "It locks in personal identity and intimacy customizations, causing co-ownership strategies to diverge between partners"
+    ],
+    "correctIndex": 1,
+    "explanation": "A walled garden bundles contacts (you can't iMessage an Android friend) AND functionality/features (you can't AirDrop to Windows or use WhatsApp stickers in Messenger). This causes expression breakdowns: interruptions to conversation flow when a user needs functionality from another app to express a message as desired. Option A confuses walled gardens with mobile design challenges (screen real estate) and situational impairments - different concepts entirely. Option C describes the technical context of an ecology, not what a walled garden locks. Option D describes customization for identity/intimacy and co-ownership strategies (the DearBoard line of work), which are effects of co-customization, not what a walled garden locks in."
+  },
+  {
+    "id": "q7",
+    "category": "Modalities",
+    "topic": "Modality vs. sensing technology",
+    "lecture": "L3 modalities (Turk, 2014)",
+    "difficulty": "easy",
+    "question": "According to the course definition, what is a 'modality' in an interaction technique?",
+    "options": [
+      "A structured communication channel between a human and an interactive technology, characterized by a specific human expressive or perceptual capability",
+      "The hardware component that detects a user's input, such as a microphone or accelerometer",
+      "A technology-dependent method for performing a generic interaction task like pointing or text entry",
+      "The generic goal the user wants to accomplish, such as select, scroll, or zoom"
+    ],
+    "correctIndex": 0,
+    "explanation": "The verbatim course definition (citing Turk, 2014) is that a modality is a structured communication channel characterized by a specific human expressive (input) or perceptual (output) capability. Option B describes a sensing technology, not a modality (the microphone is the sensor; voice/audio is the modality) - a key locked trap. Option C is the definition of an interaction technique. Option D is an interaction task. The course keeps these distinct: sensing tech (hardware) vs. modality (human capability channel) vs. technique (tech-dependent method) vs. task (generic goal)."
+  },
+  {
+    "id": "q8",
+    "category": "Modalities",
+    "topic": "Output modalities under situational impairment",
+    "lecture": "L9 accessibility / situational impairment",
+    "difficulty": "hard",
+    "question": "A user is jogging outdoors in bright sunlight and receives a privacy nudge that the prototype delivers only as a low-contrast on-screen banner (visual output). The nudge is repeatedly missed. Using course terminology, which statement BEST diagnoses why the visual-only output fails here?",
+    "options": [
+      "The jogger experiences a situational impairment (glare plus motion reduces visual perception), so the visual output modality fits the context poorly; adding a haptic output modality would better suit the physical context of use",
+      "The jogger has a temporary impairment to vision, so the design should wait until the impairment resolves before delivering any output",
+      "The visual banner has poor discoverability, so adding feedforward cues would make the output modality fit the running context",
+      "The problem is limited input expressiveness, since the jogger cannot produce a rich enough input to dismiss the banner"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bright sunlight plus motion is a textbook situational impairment: the context induces a temporary limitation on the visual perceptual channel, so a visual output modality is a poor fit for that physical context of use, and a haptic output modality (vibration) is the course-recommended remedy (cf. WalkType, multimodal output for variable contexts). Option B misclassifies it as a temporary impairment - the course distinguishes situational (context-induced, e.g. sunlight, walking) from temporary (a short-lived condition like an eye infection or cast); nothing about the user's vision is impaired, only the situation. Option C misapplies discoverability/feedforward, which concern hidden commands and guidance before an action, not whether an output channel is perceivable. Option D confuses the failure of an OUTPUT modality (perception) with input expressiveness (the range of inputs the user can produce)."
+  },
+  {
+    "id": "q9",
+    "category": "Modalities",
+    "topic": "Multimodal interaction and input vs. output modalities",
+    "lecture": "L3 modalities + L9 multimodal interaction",
+    "difficulty": "medium",
+    "question": "A designer claims their technique is 'multimodal' because it lets the user dismiss an alert by EITHER tapping the screen OR shaking the phone, and confirms with a vibration. Per the course material, which classification of these channels is correct?",
+    "options": [
+      "Tap and shake are both input modalities and the vibration is a haptic output modality, so combining multiple input/output modalities makes it multimodal",
+      "Tap and shake are both output modalities because they produce a system response, and the vibration is the only input modality",
+      "Shake is a sensing technology rather than a modality, so the technique uses only one input modality (tap)",
+      "Tap is a modality but shake is an interaction task, so the technique is unimodal on input"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tap (single touch) and shake (motion) are both listed as INPUT modalities - ways the human expresses intent - and vibration is HAPTIC OUTPUT (feedback the human perceives); combining multiple input and/or output modalities is exactly multimodal interaction (Turk, 2014). Option B inverts the input/output direction: tap and shake are how the human ACTS (input), not feedback. Option C confuses modality with sensing technology - the accelerometer/gyroscope is the sensing tech behind the motion (shake) modality, but shake itself is a genuine input modality. Option D miscategorizes shake as an interaction task; tasks are generic goals like select/scroll/zoom, not the channel used to express them."
+  },
+  {
+    "id": "q10",
+    "category": "Interaction qualities",
+    "topic": "Interaction qualities vs. usability triad",
+    "lecture": "mHCI_lecture3 (Three Interaction Qualities) + ISO 9241-11 usability triad background",
+    "difficulty": "medium",
+    "question": "A designer claims that 'efficiency/performance' (an interaction quality) and 'efficiency' (a usability dimension) are taught as the same single concept, so the three interaction qualities ARE the usability triad under different names. Per the course material, what is the correct relationship?",
+    "options": [
+      "The three interaction qualities (discoverability, efficiency/performance, expressiveness) and the usability triad (effectiveness, efficiency, satisfaction) are distinct triads; performance overlaps conceptually with efficiency, but they are taught as separate framings",
+      "They are identical: discoverability maps to effectiveness, efficiency/performance maps to efficiency, and expressiveness maps to satisfaction",
+      "The interaction qualities are a strict subset of the usability triad, so every interaction quality is also one of the three usability dimensions",
+      "The usability triad describes interaction techniques while the interaction qualities describe whole products, so they never overlap on any concept"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct (0): The material explicitly warns not to confuse the three interaction qualities (discoverability / input expressiveness / performance) with the three usability dimensions (effectiveness / efficiency / satisfaction); it says performance overlaps conceptually with efficiency but the two are taught as distinct framings. Wrong (1): There is no one-to-one mapping; discoverability is not 'effectiveness' and expressiveness is not 'satisfaction' in the material. Wrong (2): They are described as two different triads, not a subset relationship. Wrong (3): The material states there IS a conceptual overlap (performance and efficiency), contradicting 'never overlap on any concept.'"
+  },
+  {
+    "id": "q11",
+    "category": "Interaction qualities",
+    "topic": "Applying expressiveness vs. performance vs. discoverability",
+    "lecture": "mHCI_lecture3 (Three Interaction Qualities) + Fieldward/Pathward (feedforward bridge)",
+    "difficulty": "hard",
+    "question": "A team adds a swipe-typing keyboard so users can enter text more quickly. Separately they let users invent custom gesture shortcuts (e.g., a heart shape to call a partner), and they add Fieldward-style feedforward so users can see which gestures are available. Mapping each change to the interaction quality it primarily improves, which statement is correct per the course material?",
+    "options": [
+      "Faster swipe-typing improves expressiveness, the custom gesture shortcuts improve performance, and the feedforward improves discoverability",
+      "Faster swipe-typing improves performance, the custom gesture shortcuts improve expressiveness, and the feedforward improves discoverability",
+      "Faster swipe-typing improves discoverability, the custom gesture shortcuts improve performance, and the feedforward improves expressiveness",
+      "All three changes primarily improve efficiency, since each one ultimately lets the user finish faster"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (1): Performance = helping users perform tasks faster or avoid errors, so faster typing is performance (the material explicitly flags 'faster typing is performance, not expressiveness'). Adding new gesture commands increases the RANGE of available input possibilities = input expressiveness. Feedforward (Fieldward) surfaces hidden/available commands, which addresses discoverability (the L3-to-L4 bridge: gestures have poor discoverability, solved by feedforward). Wrong (0): It swaps performance and expressiveness, the exact trap the notes call out. Wrong (2): Faster typing is not discoverability (about hidden commands) and gesture shortcuts are not performance. Wrong (3): Expressiveness (range of input) and discoverability (revealing hidden commands) are distinct qualities, not all reducible to efficiency/speed."
+  },
+  {
+    "id": "q12",
+    "category": "Design principles",
+    "topic": "Reification vs polymorphism vs reuse",
+    "lecture": "Beaudouin-Lafon & Mackay design principles (Section 7, notes)",
+    "difficulty": "hard",
+    "question": "A budgeting app lets you take a 'savings goal,' which appears as a draggable card, and drop it onto an account card to perform a withdrawal. The same drag-and-drop 'merge' command also works whether you drop a goal onto a checking account, a savings account, or a credit card. Which course concepts BEST describe, respectively, (a) the savings goal being a draggable card you can drop onto things, and (b) the merge command working across all three account types?",
+    "options": [
+      "(a) reification; (b) polymorphism",
+      "(a) polymorphism; (b) reification",
+      "(a) reification; (b) reuse",
+      "(a) reuse; (b) polymorphism"
+    ],
+    "correctIndex": 0,
+    "explanation": "(a) Reification turns an abstract concept/action (a savings goal) into a concrete, manipulable object that can itself become the INPUT to another command (dragging it onto an account) — this matches the course's exact example of a reified object becoming input to a command. (b) Polymorphism is the SAME command affecting DIFFERENT TYPES of objects (merge works on checking, savings, and credit accounts), mirroring the 'Share works on songs/artists/playlists' example. The distractors swap or misapply: option B inverts the two; reuse (options C, D) is wrong because nothing here recycles PAST input/output to save future effort (no history/recall of a prior choice or saved result) — reuse is about TIME/history, not object types or making an object manipulable."
+  },
+  {
+    "id": "q13",
+    "category": "Design principles",
+    "topic": "Reuse (recycling input vs output)",
+    "lecture": "Beaudouin-Lafon & Mackay design principles (Section 7 + weak point #3, notes)",
+    "difficulty": "medium",
+    "question": "Per the course material, which scenario is the clearest example of REUSE through 'recycling OUTPUT' (as opposed to recycling input)?",
+    "options": [
+      "Saving a navigation route you just calculated as a reusable 'Home to Work' shortcut",
+      "A search bar showing your recent search history so you can re-pick a past query",
+      "A 'Share' button that works on songs, artists, and playlists alike",
+      "Google Maps offering a 'swap' button to flip your origin and destination"
+    ],
+    "correctIndex": 0,
+    "explanation": "Reuse has two flavours: recycling INPUT (the app hands back choices you entered before) and recycling OUTPUT (you SAVE a produced result as a reusable object). Saving a calculated route as a shortcut is the course's exact 'recycling output' example. The recent search history and the Maps 'swap' (re-using your previously entered origin/destination) are recycling INPUT, not output. 'Share' across songs/artists/playlists is polymorphism (one command, many object types), not reuse at all."
+  },
+  {
+    "id": "q14",
+    "category": "Design principles",
+    "topic": "Feedforward vs feedback and Nielsen heuristics",
+    "lecture": "Feedforward (mHCI L4) + Nielsen's 10 heuristics (Section 7, notes)",
+    "difficulty": "hard",
+    "question": "Gestures suffer poor discoverability because the available commands are hidden. The Fieldward guide shows a colour gradient indicating optimal directions to make a recognizable gesture BEFORE the user commits to one. Which statement is correct per the course material?",
+    "options": [
+      "Fieldward is feedforward — guidance provided before executing a command about what will happen or how to act ('feedback about future actions')",
+      "Fieldward is feedback, because the colour gradient is system output rendered while the user is interacting",
+      "Feedforward is a special case of feedback that occurs slightly later in time, after the gesture begins",
+      "Fieldward implements Nielsen's 'visibility of system status' heuristic, which is the formal definition of feedforward"
+    ],
+    "correctIndex": 0,
+    "explanation": "Feedforward is the design principle of providing guidance/hints/information BEFORE executing a command so users understand what will happen or how to act — the course's safe phrasing is 'feedback about future actions,' and Fieldward (with Pathward and OctoPocus) is the named feedforward example that solves gestures' poor discoverability. Option B is the classic trap: feedback is information after/during an action telling you what HAS happened, whereas feedforward precedes the action — the course explicitly warns not to call feedforward a kind of feedback in time, so C is also wrong. D conflates two distinct things: 'visibility of system status' is a Nielsen heuristic about showing current state (feedback-like), and it is NOT the definition of feedforward, which is a separate design principle formally defined in L4."
+  },
+  {
+    "id": "q15",
+    "category": "Three waves of HCI",
+    "topic": "Wave characteristics / theory sources",
+    "lecture": "Bødker (2006), NordiCHI; L1 three waves",
+    "difficulty": "medium",
+    "question": "Which set of theoretical sources does Bødker associate specifically with SECOND-wave HCI, and what core concept did they bring into focus for analysis and design?",
+    "options": [
+      "Situated action, distributed cognition, and activity theory — bringing the concept of context into focus",
+      "Aesthetics, emotion, and pragmatist experience — bringing the concept of felt life into focus",
+      "Human factors and cognitive psychology — bringing the concept of the human factor into focus",
+      "Cultural probes, take-it-or-leave-it design, and consumerism — bringing the concept of inspiration into focus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bødker grounds the second wave in situated action (Suchman), distributed cognition, and activity theory (Engeström, Bødker), and says these brought CONTEXT — 'the most central second-wave concept' — into focus. Option B (aesthetics/emotion/experience, 'felt life') is the THIRD wave's conceptual focus, not the second. Option C (human factors/cognitive psychology, 'human factor') is FIRST-wave. Option D names third-wave METHODS/critiques (cultural probes, take-it-or-leave-it per Dunne & Raby, consumerism), not second-wave theory."
+  },
+  {
+    "id": "q16",
+    "category": "Three waves of HCI",
+    "topic": "Classifying a study / paradigm by wave",
+    "lecture": "Bødker (2006), NordiCHI; L1 three waves; Almuhimedi et al. (2015)",
+    "difficulty": "hard",
+    "question": "A study deploys a privacy-nudge on participants' OWN smartphones for 22 days in their everyday lives (a non-work, everyday-life concern), yet analyzes the data with logged access counts, comfort ratings, and random-effects regression producing p-values to establish a cause–effect relationship. Using Bødker's wave framework as applied in the course, how is this study best characterized?",
+    "options": [
+      "A third-wave everyday-life CONCERN investigated with first-wave-style quantitative measurement and cause–effect analysis",
+      "A pure third-wave study, because everyday-life context and emotion-laden 'creepiness' are present throughout",
+      "A pure second-wave study, because it studies users with field/longitudinal methods rather than in a lab",
+      "A pure first-wave study, because the analysis relies on counts, regression, and p-values"
+    ],
+    "correctIndex": 0,
+    "explanation": "The course explicitly notes that the Almuhimedi paper 'mixes first-wave measurement (counts, regression) on a third-wave everyday-life concern (privacy in daily life)' — a paper need not sit cleanly in one wave. The everyday-life, non-work privacy focus is third-wave in CONCERN, but the quantitative measurement and search for a cause–effect relationship are first-wave in METHOD. Option B ignores the first-wave measurement apparatus. Option C wrongly treats any field/longitudinal study as second-wave (the second wave's domain is WORK/communities of practice, not everyday personal privacy) and conflates 'field' with 'second wave.' Option D ignores that the substantive concern is everyday-life experience, which is not a first-wave (lab/single-user performance) topic."
+  },
+  {
+    "id": "q17",
+    "category": "Research contributions",
+    "topic": "Survey contribution",
+    "lecture": "Wobbrock & Kientz",
+    "difficulty": "medium",
+    "question": "In the Wobbrock & Kientz taxonomy, what defines a \"survey\" contribution?",
+    "options": [
+      "A study that distributes a questionnaire to a large, representative sample of participants to gather attitudinal data",
+      "A review and synthesis of existing published work on a topic (a literature meta-analysis) that exposes trends and gaps",
+      "A validated new measurement instrument or scale developed for the research community",
+      "A field deployment using the Experience Sampling Method to collect self-reported data over time"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (B): For Wobbrock & Kientz a survey contribution = a review and synthesis of already-published work (a literature meta-analysis) that organizes what is known and reveals research gaps; it is appropriate only after a topic matures and often cites references in the hundreds (e.g. ACM Computing Surveys). A is the most-tested trap: a questionnaire/survey instrument used to COLLECT data from people is an EMPIRICAL method/source, not a survey contribution — the word 'survey' here means surveying the literature, not polling people. C describes a methodological contribution (a validated tool like the User Burden Scale). D (ESM data collection) is an empirical method (Consolvo & Walker is cited as a methodological example of applying it, but the data it gathers is empirical) — neither is a literature meta-analysis."
+  },
+  {
+    "id": "q18",
+    "category": "Research contributions",
+    "topic": "Methodological vs Theoretical",
+    "lecture": "Wobbrock & Kientz",
+    "difficulty": "hard",
+    "question": "A paper develops and validates a new questionnaire, the \"User Burden Scale,\" while a second paper presents \"an error model for pointing based on Fitts' law.\" How does the taxonomy classify these two contributions, respectively?",
+    "options": [
+      "Empirical and Theoretical — both report findings, one qualitative and one quantitative",
+      "Methodological and Theoretical — the validated scale is a measurement tool (how we work), the error model is a predictive model (what we expect)",
+      "Methodological and Methodological — both create reusable tools for other researchers",
+      "Survey and Theoretical — the scale synthesizes prior workload measures, the error model is a framework"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (B): The User Burden Scale is a validated measurement instrument, which is a METHODOLOGICAL contribution — the contribution is the tool (judged on utility, reproducibility, reliability, validity), informing HOW we do our work, NOT the findings from using it (so not empirical, even though it is a questionnaire). The Fitts'-law error model is a quantitative model with descriptive/predictive power, a THEORETICAL contribution informing what we expect. A is the empirical trap: a validated instrument is not empirical findings. C wrongly calls the error model methodological — a model that predicts/explains is theoretical, not a 'how-to' method. D misuses 'survey' (no literature meta-analysis here)."
+  },
+  {
+    "id": "q19",
+    "category": "Research contributions",
+    "topic": "Empirical vs Artifact",
+    "lecture": "Wobbrock & Kientz",
+    "difficulty": "hard",
+    "question": "A team builds a novel mid-air pointing device and writes it up. A second team then runs a controlled lab experiment observing how people use that same device. Per the taxonomy, the two papers' primary contributions are best characterized as:",
+    "options": [
+      "Both artifact contributions, since both papers concern the same built device",
+      "Artifact (generative, design-driven invention) and Empirical (descriptive, discovery-driven study of use)",
+      "Empirical (the prototype) and Methodological (the experimental procedure)",
+      "Both empirical, since an artifact contribution always requires an accompanying user study"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (B): The invention itself — the built device — is an ARTIFACT contribution, arising from generative, design-driven activity (invention: what is possible). The separate study OBSERVING how people use it is an EMPIRICAL contribution, arising from descriptive, discovery-driven activity (science: what is true) — exactly the 'building a system ≠ studying a system' distinction, which CHI 2016 reflected by splitting empirical into 'study of system use' vs 'study of people.' A collapses the two: building vs studying are different contribution types. C mislabels the prototype as empirical and the experiment as methodological — the experiment is empirical (a method applied to find facts), not a new method. D is false: artifact contributions are OFTEN but NOT NECESSARILY accompanied by an empirical evaluation, and sometimes should not be (Greenberg & Buxton; Olsen)."
+  },
+  {
+    "id": "q20",
+    "category": "Study design",
+    "topic": "Independent axes (within/between vs lab/field)",
+    "lecture": "TERMINOLOGY_DEPENDENCY (independent axes)",
+    "difficulty": "hard",
+    "question": "A team runs a 1-month study where each participant is randomly assigned to ONE of two notification designs, uses it on their own phone in daily life, and the team logs which design produces fewer dismissed notifications. A reviewer claims: \"Because it is a between-subjects experiment, it must be a lab study, so its ecological validity is automatically low.\" Per the course's independent-axes model, what is the BEST correction?",
+    "options": [
+      "The reviewer conflates two orthogonal axes: subject-assignment (within/between) is independent of setting (lab/field); this is a between-subjects FIELD experiment, which can have high ecological validity from the realistic setting",
+      "The reviewer is correct that experiments must be run in a lab, but wrong that between-subjects designs lower ecological validity",
+      "The reviewer is correct: any experiment with controlled assignment of conditions is by definition a lab study with low ecological validity",
+      "The study cannot be an experiment at all because it was run in the field, so the within/between distinction does not apply"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct (0): The course's anti-confusion model treats Setting (lab↔field), Design/purpose (experiment vs not), and Subject assignment (within/between) as ORTHOGONAL axes set independently; a longitudinal between-subjects field experiment is explicitly valid and keeps a controlled comparison while gaining realism. Ecological validity depends on realism of setting (field, own devices), not on the between-subjects choice. (1) and (2) repeat the false claim that experiments must be in a lab. (3) collapses Design onto Setting. (4) is wrong because experiments absolutely can be run in the field; within/between still applies."
+  },
+  {
+    "id": "q21",
+    "category": "Study design",
+    "topic": "Context of use controlled in a lab",
+    "lecture": "L6 study design (control vs realism)",
+    "difficulty": "medium",
+    "question": "According to Lecture 6, when a study is described as a 'lab experiment,' what is fundamentally being controlled, and what is the stated cost of that control?",
+    "options": [
+      "The dependent variables are being controlled; the cost is reduced internal validity",
+      "The context of use (physical, social, temporal, technical, task) is being controlled; the cost is reduced realism / ecological validity",
+      "The hypotheses are being controlled; the cost is fewer participants",
+      "The number of levels of the independent variable is being controlled; the cost is increased order effects"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (1): The lecture's punchline is that a lab experiment is fundamentally an exercise in controlling the CONTEXT OF USE (the five types: physical, social, temporal, technical, task). More control buys internal validity but at the cost of realism (ecological/external validity) — the explicit control-realism trade-off. (0) is backwards: DVs are measured, not controlled, and control raises (not reduces) internal validity. (2) and (3) name things that are not what 'lab control' refers to; levels of an IV and hypotheses are design choices, not the context being held constant."
+  },
+  {
+    "id": "q22",
+    "category": "Study design",
+    "topic": "IV/DV, levels, secondary IV",
+    "lecture": "Iftikhar et al. (Typing Indicators) / L6 study design",
+    "difficulty": "medium",
+    "question": "In the Typing Indicators study (Iftikhar et al.), which statement correctly identifies the independent variables, their levels, and a dependent variable?",
+    "options": [
+      "Typing indicator is the DV with 4 levels; NASA-TLX score is the IV",
+      "Typing indicator is the primary IV (4 levels) and Problem is a secondary IV (4 levels); number of sent messages is a DV",
+      "NASA-TLX and helpfulness ratings are the IVs; typing indicator is the only DV (4 levels)",
+      "Typing indicator is the primary IV with 8 levels (one per participant set); social presence is a fixed level"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (1): The deck lists Typing indicator (the 'Room') as the primary IV with 4 levels (no indicator, is typing, masked typing, live typing) and Problem as a secondary IV with 4 levels (Problem 1-4). DVs (measured outcomes) include NASA-TLX, helpfulness/effectiveness ratings, and typed words / sent messages. (0) and (2) swap IV and DV - the IV is manipulated, the DV is measured. (3) is wrong: there are 4 levels of the typing indicator, not 8 (the 24 participants were 3 sets of 8 people), and social presence is a finding/construct, not an IV level."
+  },
+  {
+    "id": "q23",
+    "category": "Study design",
+    "topic": "Order effects, counterbalancing vs randomisation",
+    "lecture": "L6 study design (order effects / counterbalancing)",
+    "difficulty": "hard",
+    "question": "A researcher uses a within-subjects design where every participant tries all four menu styles. They are worried about practice and fatigue biasing results. Which statement most precisely reflects the course distinctions among order effects, counterbalancing, and randomisation?",
+    "options": [
+      "Order effects only occur in between-subjects designs; switching to within-subjects would eliminate them",
+      "Counterbalancing systematically varies condition order (e.g., Latin square) so order effects cancel out, whereas randomisation distributes uncontrolled variables by chance; both fight confounds but differently",
+      "Counterbalancing and randomisation are the same technique under two names, both relying on chance assignment",
+      "Order effects are caused by the newness of the technology, so a pilot study is the standard fix"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correct (1): The material defines counterbalancing as SYSTEMATIC variation of condition order (e.g., Latin square) so order effects cancel across the sample, while randomisation distributes uncontrolled variables by CHANCE; the explicit trap is 'randomisation ≠ counterbalancing.' (0) is reversed: order effects are a concern OF within-subjects designs (same person does multiple conditions). (2) directly violates the stated distinction. (3) confuses order effects (sequence: fatigue/practice) with NOVELTY effects (reaction to newness over time), and a pilot study tests the protocol, not order bias."
+  },
+  {
+    "id": "q24",
+    "category": "Study design",
+    "topic": "Technology probe, longitudinal, non-experimental in field",
+    "lecture": "L6 study design / TERMINOLOGY_DEPENDENCY",
+    "difficulty": "hard",
+    "question": "A team wants to understand long-term adoption of a new shared-keyboard feature and discover unanticipated uses. They deploy a deliberately simple, flexible version to couples for a month in the field, collecting usage logs and diary entries, with no fixed tasks or hypotheses. Which characterization is MOST accurate per the course?",
+    "options": [
+      "This is a technology probe used in a longitudinal field study; being non-experimental and field-based does NOT make it automatically interpretivist, and longitudinal duration helps see past novelty effects",
+      "Because it has no hypotheses or IV/DV it cannot yield valid findings and must be redesigned as a lab experiment",
+      "It is a within-subjects experiment because every couple uses the same single feature over time",
+      "It is automatically an interpretivist study because it is qualitative and run in the field, so positivist validity terms cannot apply to any part of it"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct (0): A technology probe is a simple, flexible, deployable technology given to users in the FIELD to collect data about use, inspire users/designers, and test in real settings — ideal for understanding adoption and discovering opportunities; running it longitudinally helps get past novelty effects (temporary enthusiasm for newness). (1) is wrong: non-experimental field methods yield valid (just different) knowledge — not everything must be an experiment. (2) misuses 'within-subjects,' which is an experimental subject-assignment term requiring an IV. (3) commits the worldview/axes trap: setting and data type are independent of worldview — being field-based and qualitative does not force interpretivism, and the axes are orthogonal."
+  },
+  {
+    "id": "q25",
+    "category": "Data types & methods",
+    "topic": "Two fixed relationships (data axes)",
+    "lecture": "L7 types of data (Griggio)",
+    "difficulty": "medium",
+    "question": "The lecture states two one-directional relationships between data dimensions. Which statement is consistent with these locked relationships?",
+    "options": [
+      "Behavioral data is always observed, but not all observed data is behavioral",
+      "Observed data is always behavioral, but not all behavioral data is observed",
+      "Attitudinal data is always observed, but not all observed data is attitudinal",
+      "Self-reported data is always attitudinal, but not all attitudinal data is self-reported"
+    ],
+    "correctIndex": 0,
+    "explanation": "The lecture locks in two one-way arrows: behavioral implies observed, and attitudinal implies self-reported. Option A states the behavioral implication correctly, with the correct caveat that the converse fails (battery level, heart rate, and physical-context descriptions are observed but not behavioral). B reverses the arrow (the classic 'observed = behavioral' trap). C swaps the pairing entirely (attitudinal is tied to self-reported, not observed). D reverses the attitudinal arrow ('self-reported = attitudinal'), which is false because demographics and self-reported accounts of behavior are self-reported but not attitudinal."
+  },
+  {
+    "id": "q26",
+    "category": "Data types & methods",
+    "topic": "Classify-this-data scenario (Cecchinato quote)",
+    "lecture": "L7 classification example (Cecchinato et al. CHI 2017)",
+    "difficulty": "hard",
+    "question": "A participant tells an interviewer: \"I had taken my smartwatch off a couple of days ago because I didn't want to look too much like a techno-nerd.\" How should this datum be classified per the lecture's framework?",
+    "options": [
+      "Behavioral and observed, because it describes an action the user took (removing the watch)",
+      "Attitudinal and self-reported, because it is the user's reported reasoning/feeling about self-presentation",
+      "Behavioral and self-reported, because the user is reporting their own behavior",
+      "Attitudinal and observed, because the researcher recorded what the participant said"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is the lecture's signature trap. The quote mentions an action (taking the watch off), but it is a self-reported account delivered in an interview, not data the researcher measured directly, so it cannot be 'observed.' Because the content conveys what the user values and feels (not wanting to look like a 'techno-nerd' = self-presentation), it leans attitudinal. A is wrong because behavioral data must be observed/measured by researchers, not recounted. C confuses the 'self-reported account of behavior' case: although self-reported, conveyed reasoning/feeling makes it attitudinal, and crucially behavioral data is by definition always observed, so 'behavioral and self-reported' is contradictory. D is wrong because interview speech is self-reported, never observed."
+  },
+  {
+    "id": "q27",
+    "category": "Data types & methods",
+    "topic": "Methods mapped to data axes (NASA-TLX vs message counts)",
+    "lecture": "L7 classification table (Iftikhar et al. CHI 2023)",
+    "difficulty": "hard",
+    "question": "In the Iftikhar 'Together but not together' slide, the deck shows NASA-TLX scores alongside a table of the number of messages exchanged. How does the framework classify these two data sources, respectively?",
+    "options": [
+      "NASA-TLX = behavioral/observed/quantitative; message counts = attitudinal/self-reported/quantitative",
+      "NASA-TLX = attitudinal/self-reported/quantitative; message counts = behavioral/observed",
+      "Both are behavioral/observed because both yield numbers",
+      "NASA-TLX = attitudinal/observed/quantitative; message counts = behavioral/self-reported"
+    ],
+    "correctIndex": 1,
+    "explanation": "NASA-TLX measures perceived workload on rated subscales, so it captures an internal state the participant reports: attitudinal, self-reported, and (because it produces scores) quantitative. The number of messages exchanged is what users actually did, captured via logs: behavioral and observed. B is correct. A swaps the two classifications. C is the 'numbers = behavioral' fallacy; quantitative form is an independent axis from behavioral/attitudinal. D violates the locked relationships: attitudinal data is always self-reported (not observed), and behavioral data is always observed (not self-reported)."
+  },
+  {
+    "id": "q28",
+    "category": "Data types & methods",
+    "topic": "Measurement scales (scale identification)",
+    "lecture": "Quantitative HCI lecture (lecture_quant_hci_tb_final)",
+    "difficulty": "medium",
+    "question": "A study records, for each participant: (a) which messaging app is their favorite, (b) their self-rated difficulty on a Likert ranking of low/medium/high, and (c) the total count of messages they sent. What are the measurement scales of (a), (b), and (c)?",
+    "options": [
+      "Nominal, ordinal, ratio",
+      "Ordinal, interval, ratio",
+      "Nominal, interval, interval",
+      "Categorical, ordinal, interval"
+    ],
+    "correctIndex": 0,
+    "explanation": "Favorite app is a set of labeled categories with no inherent order, so it is nominal. A low/medium/high Likert ranking is ordered but with unequal/unknown spacing between levels, so it is ordinal. A count of messages has equal spacing and a true zero (zero messages means none), so it is ratio. A is correct. B mislabels the favorite app as ordinal. C treats both ordered/count data as interval and ignores that counts have a true zero (ratio) and that low/med/high is ordinal not interval. D's 'categorical' is just another name for nominal but then mislabels the message count as interval rather than ratio (counts have a true zero)."
+  },
+  {
+    "id": "q29",
+    "category": "Validity & worldviews",
+    "topic": "Validity types (internal/external/ecological)",
+    "lecture": "L8 worldviews & validity",
+    "difficulty": "medium",
+    "question": "A researcher runs a within-subjects experiment comparing two text-entry techniques but does not counterbalance condition order, so participants are faster on the second technique partly due to practice. Which validity is most directly threatened?",
+    "options": [
+      "External validity, because results may not generalize to other populations",
+      "Internal validity, because a learning/order effect undermines the trustworthiness of the comparison within the study's own questions",
+      "Ecological validity, because the lab setting differs from real-life use",
+      "Transferability, because the reader cannot decide whether the findings apply elsewhere"
+    ],
+    "correctIndex": 1,
+    "explanation": "Order/learning effects are confounds within the study itself, so they undermine internal validity (the trustworthiness of the results with respect to the study's own goals/comparison). External validity (distractor A) concerns generalizing to OTHER contexts and depends on the SAMPLE, not on order effects. Ecological validity (C) is about lab vs real-life realism, not about an uncounterbalanced order. Transferability (D) is an interpretivist criterion and the wrong vocabulary for a positivist experiment."
+  },
+  {
+    "id": "q30",
+    "category": "Validity & worldviews",
+    "topic": "Field does not guarantee external validity (sample does)",
+    "lecture": "L8 / TERMINOLOGY_DEPENDENCY validity dependencies",
+    "difficulty": "hard",
+    "question": "A team runs a flawless one-month field study on participants' own phones, but all 20 participants are 20-year-old students from one university. A reviewer says the strong real-world setting means the results 'clearly generalize to the wider population.' What is the precise problem with the reviewer's claim?",
+    "options": [
+      "Nothing — running it in the field is exactly what establishes external validity",
+      "External validity depends on the SAMPLE, not the setting, so the narrow, homogeneous sample still leaves external validity weak despite the field setting",
+      "The field setting hurts internal validity, which is the same thing as external validity here",
+      "Ecological validity is what determines whether results generalize to other populations, and the field setting guarantees it"
+    ],
+    "correctIndex": 1,
+    "explanation": "External validity (generalizing to other populations/contexts) is determined by the SAMPLE, not the study setting; a homogeneous all-student sample keeps external validity weak even in a perfect field deployment. A confuses 'field' with external validity — the exact trap. C conflates internal and external validity (they are distinct: internal = comparison rigor). D misdefines ecological validity, which is a special case of external concerning REAL-LIFE realism of the setting/results, not generalization across populations, and the field setting does not 'guarantee' generalization to other people."
+  },
+  {
+    "id": "q31",
+    "category": "Validity & worldviews",
+    "topic": "Do-not-judge-across-worldviews; interpretivist rigor",
+    "lecture": "L8 worldviews (Shklovski vs Balebako)",
+    "difficulty": "hard",
+    "question": "A reviewer dismisses Shklovski et al.'s 'Leakiness and Creepiness' study by writing: 'With only 13 interviewees and no p-values, this has no statistical power and weak external validity — it isn't valid.' Per the lecture's central meta-lesson, what is wrong with this critique?",
+    "options": [
+      "The critique is correct; any study with N=13 and no inferential statistics is invalid regardless of worldview",
+      "It applies positivist criteria (statistical power, external validity) to an interpretivist study, which should instead be judged by credibility, transferability, and reflexivity",
+      "It is wrong only because the study was a field study, which automatically grants external validity",
+      "It confuses internal and ecological validity, which is the real error in the reviewer's reasoning"
+    ],
+    "correctIndex": 1,
+    "explanation": "The lecture's crowning rule is not to judge across worldviews: statistical power and external validity are positivist concerns, but Shklovski is interpretivist, so it is correctly judged by credibility (grounded, coherent), transferability (reader decides), and reflexivity (disclosed subjectivity). A endorses the misapplication. C is false — it was an interview study, and a field setting would not 'automatically' grant external validity anyway (the sample does). D invents a validity-confusion that is not the issue; the real error is using the wrong worldview's rulers entirely."
+  },
+  {
+    "id": "q32",
+    "category": "Validity & worldviews",
+    "topic": "Social-desirability bias vs demand characteristics",
+    "lecture": "L8 biases (Balebako) / L10 Biselli cookie banners",
+    "difficulty": "medium",
+    "question": "During a supervised lab privacy study, participants set unusually strict app permissions because they want to appear conscientious to the observing researcher, rather than acting as they normally would. Which bias is this, and what does it most directly threaten under a positivist worldview?",
+    "options": [
+      "Demand characteristics; it threatens ecological validity because the lab is not real life",
+      "Self-selection bias; it threatens external validity because the sample is unrepresentative",
+      "Social-desirability (participant) bias; it threatens internal validity by undermining the trustworthiness of the observed/self-reported behavior",
+      "Reflexivity; it threatens transferability because the researcher's values shaped the data"
+    ],
+    "correctIndex": 2,
+    "explanation": "Acting more 'properly' toward what seems socially acceptable / what the researcher wants is social-desirability (participant) bias, which threatens internal validity by making the observed/self-reported behavior untrustworthy as a reflection of true behavior; the lecture notes mitigating it with unsupervised/online settings. Demand characteristics (A) specifically involve participants GUESSING the study's aim and conforming to it, and the named threat (ecological validity) is also wrong. Self-selection (B) is about who enrolls (an external-validity threat), not in-study behavior. Reflexivity (D) is an interpretivist rigor criterion, not a participant bias."
+  },
+  {
+    "id": "q33",
+    "category": "Quantitative analysis",
+    "topic": "normality / Shapiro-Wilk",
+    "lecture": "L10 Quantitative Analysis (Biselli/quant lecture)",
+    "difficulty": "medium",
+    "question": "You run shapiro.test() on the 'cookies accepted' values within each experimental group and get p = .002 for the CG group. According to the lecture, what does this tell you, and what is the analytic consequence?",
+    "options": [
+      "The CG data IS normally distributed, so a parametric one-way ANOVA is justified for this group",
+      "The CG data is NON-normal (the Shapiro null of normality is rejected), favouring a non-parametric test such as Kruskal-Wallis",
+      "The CG group differs significantly from the other groups in cookies accepted, so you should run Dunn's post-hoc next",
+      "The result is non-significant, so you fail to reject normality and may proceed with a t-test"
+    ],
+    "correctIndex": 1,
+    "explanation": "For Shapiro-Wilk the null hypothesis is 'data IS normal', so p < .05 REJECTS normality, meaning the data is non-normal, which is exactly why the paper uses the rank-based Kruskal-Wallis instead of ANOVA (correct = option 2). Option 1 inverts the logic (p < .05 means non-normal, not normal). Option 4 wrongly calls p = .002 'non-significant'. Option 3 confuses a normality assumption check with a between-group difference test; Shapiro says nothing about group differences and Dunn is the post-hoc to Kruskal-Wallis, not to a normality test."
+  },
+  {
+    "id": "q34",
+    "category": "Quantitative analysis",
+    "topic": "p-value interpretation",
+    "lecture": "L10 Quantitative Analysis (quant lecture, p-value section)",
+    "difficulty": "medium",
+    "question": "The paper reports the Kruskal-Wallis result as chi-square(2) = 43.73, p < .001. Which statement is the CORRECT interpretation per the lecture?",
+    "options": [
+      "There is a 99.9% probability that the alternative hypothesis (the banners differ) is true",
+      "If H0 (no difference between the three groups) were true, data this extreme or more extreme would be very unlikely; we reject H0, but the p-value says nothing about how large the effect is",
+      "The very small p-value proves the effect is large and practically important, so reporting an effect size is redundant",
+      "p < .001 means there is less than a 0.1% chance the significant result was caused by random chance in the population"
+    ],
+    "correctIndex": 1,
+    "explanation": "The lecture defines p as P(data this extreme or more extreme | H0 true); a tiny p lets us reject H0 but says nothing about effect size, which must be reported separately (correct = option 2). Option 1 is the classic error of treating p as the probability H1 is true. Option 3 is wrong because a small p does NOT imply a large/important effect; significance is not the same as practical importance, so the effect size r is still required. Option 4 mis-states p as 'the probability the result was due to chance' rather than the conditional probability of the data given H0."
+  },
+  {
+    "id": "q35",
+    "category": "Quantitative analysis",
+    "topic": "which test to use",
+    "lecture": "L11/L10 Which-Test cheat-sheet (quant lecture)",
+    "difficulty": "hard",
+    "question": "A researcher wants to test whether ATI (Affinity for Technology Interaction) score differs across the three OPLIS-based education levels (low/medium/high), measured on a continuous ATI scale. shapiro.test() per group returns p = .31, p = .44, and p = .27. Following the lecture's decision logic, which test (and follow-up) should be used?",
+    "options": [
+      "Kruskal-Wallis, followed by Dunn's test with BH correction, because there are three groups",
+      "One-way ANOVA, followed by Tukey HSD post-hoc if the omnibus test is significant",
+      "Three separate independent-samples t-tests (low vs med, med vs high, low vs high) with Welch's correction",
+      "Spearman correlation between education level and ATI score, because education is ordinal"
+    ],
+    "correctIndex": 1,
+    "explanation": "Three independent groups + a continuous DV + all Shapiro p-values > .05 (so normality is NOT rejected) means the parametric route applies: one-way ANOVA with Tukey HSD as the post-hoc that tells which pairs differ (correct = option 2). Option 1 is the non-parametric counterpart, used only when normality is violated (Shapiro p < .05), which is not the case here. Option 3 runs the wrong number/type of tests and inflates the family-wise error rate without a justified omnibus step. Option 4 reframes the comparison as a correlation; the question asks whether group MEANS differ, not about a monotonic association, so a group-comparison test is required."
+  },
+  {
+    "id": "q36",
+    "category": "Quantitative analysis",
+    "topic": "scientific integrity",
+    "lecture": "L10 Scientific Integrity & Correlation-not-causation (quant lecture)",
+    "difficulty": "hard",
+    "question": "Reviewing a colleague's analysis, you notice they: (a) ran a two-tailed test, saw a near-miss, then re-ran it one-tailed in the predicted direction to reach p < .05; (b) ran 7 correlations but reported only the 3 significant ones with no correction; and (c) concluded that higher ATI 'causes' fewer cookies accepted from a significant Pearson r. Per the lecture, the BEST single description of these three problems, in order, is:",
+    "options": [
+      "(a) legitimate use of greater one-tailed power, (b) p-hacking, (c) a valid causal claim because the correlation was significant",
+      "(a) HARKing/p-hacking via a post-hoc switch to a one-tailed test, (b) p-hacking that needed a BH or Bonferroni correction, (c) an unjustified causal claim that ignores a possible confounding variable",
+      "(a) Type II error, (b) family-wise error that Tukey HSD would fix, (c) reverse causation that Spearman would resolve",
+      "(a) acceptable because directional hypotheses always have more power, (b) acceptable since BH only applies to Dunn's test, (c) correct because Pearson establishes linear causation"
+    ],
+    "correctIndex": 1,
+    "explanation": "(a) Switching to a one-tailed test only after seeing the data to grab significance is the p-hacking/HARKing trap the lecture explicitly warns against (a one-tailed test is valid only with strong PRIOR evidence). (b) Reporting only significant results from many tests is p-hacking; running 7 tests inflates the family-wise error rate, so a correction (BH preferred in HCI, or the conservative Bonferroni) is needed. (c) A significant correlation does not establish causation; a confounding variable could drive both (the ice-cream/drowning logic), so the causal claim is unjustified (correct = option 2). Option 1 endorses the post-hoc one-tailed switch and the causal claim. Option 3 misuses Tukey (a post-hoc for ANOVA, not a fix for arbitrary correlations) and wrongly says Spearman resolves causation. Option 4 repeats all three misconceptions."
+  },
+  {
+    "id": "q37",
+    "category": "Privacy & papers",
+    "topic": "Privacy paradox -> learned helplessness -> nudge (chain)",
+    "lecture": "Shklovski Leakiness & Creepiness + Almuhimedi nudging paper",
+    "difficulty": "hard",
+    "question": "Shklovski et al. observed that participants kept using apps they found 'creepy' and did not protect themselves even when told how to. They explain this as learned helplessness rather than mere apathy or situational constraints. If a designer wanted to address THIS specific diagnosis of the privacy paradox using Almuhimedi et al.'s nudge approach, what is the strongest design rationale?",
+    "options": [
+      "Because learned helplessness means users have given up despite knowing recourse exists, repeatedly surfacing salient frequency-of-access information re-stimulates engagement and lowers the threshold to act, countering the 'no recourse' conviction",
+      "Because the paradox is caused by lack of motivation, the nudge should restrict the most invasive permissions automatically so users no longer have to decide",
+      "Because the paradox reflects information asymmetry alone, a one-time privacy-policy disclosure at install closes the gap and resolves the helplessness",
+      "Because learned helplessness is an internal attitude, a single attitudinal survey measuring comfort is sufficient to confirm the nudge worked"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct: Learned helplessness = repeated invasions + a conviction there is NO RECOURSE, so people stop responding even when given ways to defend themselves. Almuhimedi's nudges fight exactly this by making risk SALIENT (frequency-of-access count) and providing low-threshold, choice-preserving actions; the day-10 re-stimulation finding (e.g., P2 acting 6x after nudges) shows recurring nudges counter the 'why bother' conviction. The auto-restrict option removes choice -> that is hard paternalism, no longer a nudge, and the paper frames the paradox as helplessness, not lack of motivation (Shklovski explicitly says it goes BEYOND lack of motivation/situational constraints). The one-time disclosure option is wrong because Adjerid et al. showed even a 15-second delay thwarts one-time notices, motivating REPEATED nudges. The survey-only option conflates a behavioral intervention's success with a single attitudinal measure; the studies measure actual permission review/restriction (behavioral/observed), not just comfort."
+  },
+  {
+    "id": "q38",
+    "category": "Privacy & papers",
+    "topic": "Worldview-relative validity (interpretivist vs positivist criteria)",
+    "lecture": "L8 worldviews on valid research (Shklovski interpretivist; Balebako positivist)",
+    "difficulty": "hard",
+    "question": "A reviewer dismisses Shklovski et al.'s Leakiness and Creepiness study by writing: 'With only 13 interview participants and no statistical power, this study lacks external validity and cannot generalize.' Per the lecture's central meta-lesson, what is the precise problem with this critique?",
+    "options": [
+      "It judges an interpretivist study by positivist criteria; generalizability and statistical power do not apply, and the study should instead be assessed by credibility, transferability, and reflexivity",
+      "It is correct, because any study claiming insights about users must demonstrate external validity through a representative sample",
+      "The critique confuses internal with external validity, since a small N is actually an internal-validity threat, not an external one",
+      "It is wrong only because the study also ran a 272-person survey, which supplies the missing statistical power and external validity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct: The lecture's crowning rule is that 'valid' is worldview-relative. Shklovski's paper is interpretivist (it proposes new concepts to DESCRIBE WHY people act, not predict). Under interpretivism, rigor = credibility (grounded/coherent), transferability (reader decides if insights transfer), reflexivity (disclosing subjectivity). Generalizability and statistical power are POSITIVIST concerns, so faulting the study for them is the wrong ruler. The 'it is correct' option is the exact trap the lecture warns against. The internal-vs-external option mislabels the issue: a small/narrow sample is an external-validity concern under positivism (not internal), and either way validity vocabulary doesn't even apply to an interpretivist study. The survey option is wrong because the 272-person survey doesn't 'rescue' the worldview; the conceptual contribution stands on interpretivist criteria, and importing positivist standards remains a category error."
+  },
+  {
+    "id": "q39",
+    "category": "Privacy & papers",
+    "topic": "Nudge / soft paternalism / enhanced active choice",
+    "lecture": "Almuhimedi nudging paper",
+    "difficulty": "medium",
+    "question": "In Almuhimedi et al.'s nudge, the third button reads 'Keep sharing my [location]'. Which pair of concepts does this single design choice most directly illustrate?",
+    "options": [
+      "Soft paternalism (the status-quo option is preserved, so choice is not restricted) and enhanced active choice (the loss-framed, data-specific wording steers toward reviewing settings)",
+      "Hard paternalism (the option pressures users) and information asymmetry (it reveals who receives the data)",
+      "Bounded rationality (the option simplifies the decision) and territoriality (it defends the phone's primary territory)",
+      "Reflexivity (the designer discloses bias) and habituation (the option reduces response over time)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct: Keeping an explicit 'Keep sharing' option means the nudge does NOT restrict choice -> that is what makes it soft paternalism (a nudge must preserve freedom of choice). The data-specific, loss-framed wording ('Keep sharing my location') is the lecture's example of enhanced active choice (Keller et al.): force an explicit choice and highlight the loss in the non-preferred alternative to steer toward option 1. The hard-paternalism option is wrong because preserving the option is the OPPOSITE of hard paternalism, and information asymmetry is the problem the frequency number addresses, not this button. The bounded-rationality option misapplies bounded rationality (the cognitive limit nudges compensate for, not this specific wording) and territoriality (a Shklovski/Altman-domain concept, not this button). The reflexivity option wrongly imports interpretivist reflexivity and habituation (a repeated-exposure effect, not a button's framing)."
+  },
+  {
+    "id": "q40",
+    "category": "Privacy & papers",
+    "topic": "Altman privacy regulation, information asymmetry, leakiness/creepiness",
+    "lecture": "L8 privacy concepts (Shklovski; Altman) + Almuhimedi",
+    "difficulty": "medium",
+    "question": "Which statement correctly matches a privacy concept to its precise lecture definition?",
+    "options": [
+      "Altman's privacy regulation theory frames privacy as a dynamic process of selectively adjusting access to oneself through ongoing revealing and concealment",
+      "Leakiness is the affective, felt sense that an app is intrusive even though users keep using it",
+      "Information asymmetry is the contradiction between users' reported privacy concerns and their observed behavior",
+      "Creepiness is data leaking out of an app to third-party ad and analytics companies beyond what the app needs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Correct: Altman defines privacy as a PROCESS (dialectical/boundary regulation): people selectively adjust access to themselves via ongoing acts of revealing and concealment, not a static 'more secrecy = better' state. The distractors swap definitions: Leakiness is data LEAKING to third parties (ad/analytics companies building aggregated profiles), not the felt sense - that swapped definition actually describes CREEPINESS (the affective/felt intrusion, 'apps feel creepy but people use them anyway'). Information asymmetry is the imbalance where apps/companies know far more about data flows than users do; the 'reported concern vs observed behavior' definition is the PRIVACY PARADOX, not information asymmetry. So options 2, 3, and 4 each attach the wrong definition."
+  }
+]
