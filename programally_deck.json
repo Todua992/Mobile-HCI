@@ -1,0 +1,279 @@
+{
+  "paper": {
+    "title": "ProgramAlly",
+    "subtitle": "Creating Custom Visual Access Programs via Multi-Modal End-User Programming",
+    "authors": "Jaylin Herskovitz, Andi Xu, Rahaf Alharbi, Anhong Guo — University of Michigan",
+    "venue": "UIST '24 (37th ACM Symposium on User Interface Software and Technology), Pittsburgh, Oct 2024",
+    "topic": "Lecture 9 — Accessibility (Artifact + Empirical)"
+  },
+  "talk": [
+    {
+      "label": "1",
+      "title": "Goal: let blind people filter what the camera sees",
+      "bullets": [
+        "Apps like Seeing AI or Be My AI describe **everything** — slow, heavy **cognitive burden**",
+        "Prior work found a **long-tail** of needs that fixed tools cannot cover",
+        "Goal: blind users **create their own** reusable **visual filtering programs**, e.g. `find NUMBER on BUS`",
+        "Bring **DIY assistive tech** and **end-user programming** to assistive **software**",
+        "Blind users framed as **domain experts** in their own assistive tech"
+      ],
+      "notes": "[0:00–0:45] Hello. My paper is ProgramAlly, from UIST 2024. The goal is simple. Today, blind people use apps like Seeing AI. These apps read out everything in a photo. That is slow. And it is a heavy load when you only want one small thing. The authors call this the long-tail. There are many needs that no fixed app can cover. So the idea is: let the blind person build their own filter. For example, a program that says find the number on the bus. It only tells you what you ask for. This brings the do-it-yourself idea to assistive software. And it treats blind users as experts in their own tools.",
+      "quote": "There is an abundance of visual information. And sometimes a blind person is short on time, and you really just want the particular piece of information you're curious about.",
+      "quoteAttrib": "— P1"
+    },
+    {
+      "label": "2–4",
+      "title": "Worldview, method, setting",
+      "bullets": [
+        "**Worldview: interpretivist** — they want to understand strategies and lived experience, not prove a law",
+        "Deliberately did **not measure task time** — chose **qualitative** insight instead",
+        "**Method: qualitative usability study** of an artifact — **non-experiment**, no IV/DV, no control group",
+        "Light quantitative layer: **Likert ratings** + **rankings** of the three modes (descriptive only)",
+        "**Setting: mixed** — remote (Zoom) and in-person lab with props; **one-off** single session, ~2 hours"
+      ],
+      "notes": "[0:45–1:35] Next, the worldview and method. This is an interpretivist study. They want to understand how blind people think and work. They do not want to prove a law. A strong sign of this: they chose not to measure task completion time. They say it would not be useful, because people thought aloud and took their time. So they report mainly qualitative data. This is a qualitative usability study of a system. It is not an experiment. There is no controlled comparison. There is no control group. There is no significance test. There is only a thin layer of numbers: simple ratings and rankings. The setting is mixed. Some sessions were remote on Zoom. Some were in person with real objects. Each session was one-off, about two hours.",
+      "quote": "",
+      "quoteAttrib": ""
+    },
+    {
+      "label": "5",
+      "title": "Design: one filter grammar, three ways to build it",
+      "bullets": [
+        "Grammar: `find ADJECTIVE TARGET on ADJECTIVE TARGET` — only two operators, **find** and **on**",
+        "Adjectives = **color, size, location** (authors call the implementation **naive**, proof-of-concept)",
+        "**Multi-modal** creation: **Block** (touch), **Question** (speech/text + GPT-4), **Explore** (camera, by-example)",
+        "All three modes feed the **block editor** — the shared place to review and fix programs",
+        "Three design goals: **D1 Expressiveness**, **D2 Approachability**, **D3 Accessibility** (VoiceOver + Braille)"
+      ],
+      "notes": "[1:35–2:25] Now the design. Every program uses one simple grammar. Find an item, on another item. There are only two operators: find and on. You can add an adjective: color, size, or location. The authors honestly call these naive. They are just a proof of concept. The clever part is multi-modal creation. There are three ways to build the same program. Block mode uses touch, like fill-in-the-blank. Question mode uses speech or text, and GPT-4 turns your words into a program. Explore mode uses the camera. It shows what it sees, and you pick one thing as an example. All three land in the same block editor, where you review and fix. Three design goals guide it all: expressiveness, approachability, and accessibility with VoiceOver and Braille.",
+      "quote": "",
+      "quoteAttrib": ""
+    },
+    {
+      "label": "6–7",
+      "title": "Participants and procedure",
+      "bullets": [
+        "**12 blind participants** (4 pilot, 4 remote, 4 face-to-face); **$25/hr**, IRB approved",
+        "Only **2 of 12** had any programming experience; mixed expertise (2 AT pros; 1 new to VoiceOver)",
+        "Recruited via accessibility orgs, prior contacts + **snowball sampling**; must use a **screen reader** and own an **iPhone** (TestFlight)",
+        "Procedure: intro interview → read a sample program → add an adjective → build & run **3 programs**, one per mode",
+        "**Think-aloud** while building; ran on **images** (remote) or **props** (in-person); then **rated** and **ranked** the modes"
+      ],
+      "notes": "[2:25–3:05] Who took part, and what did they do. Twelve blind adults. They were paid twenty-five dollars an hour. Only two of the twelve had ever programmed. So this is a fair test of non-experts. The group was mixed. Two were assistive-tech professionals. One was new to VoiceOver. They were recruited through accessibility groups and word of mouth. All used a screen reader and owned an iPhone, to install the app via TestFlight. The procedure was the same for everyone. First an interview. Then they read a ready-made program. Then they added an adjective as a warm-up. Then they built and ran three programs, one with each mode. They thought aloud while building. Remote users tested on images. In-person users tested on real props. Then they rated and ranked the three modes.",
+      "quote": "",
+      "quoteAttrib": ""
+    },
+    {
+      "label": "8–9",
+      "title": "Data, analysis, findings",
+      "bullets": [
+        "Data = **qualitative think-aloud + interviews**, organised into themes; plus Likert + rankings (Figure 5)",
+        "Headline: **no single mode won** — people chose modes by **task, setting, and experience**",
+        "**Question = easiest**; **Block = perceived most accurate** but highest learning cost; Explore best for **discovery**",
+        "Custom filters beat Seeing AI for repeated tasks (it 'kept reading and reading'); better than Be My AI when one photo is hard to frame",
+        "New challenge surfaced: the **unknown-unknowns** — you cannot filter for what you do not know is there"
+      ],
+      "notes": "[3:05–3:45] The data and findings. The data is mostly qualitative: think-aloud and interviews, grouped into themes. Plus simple ratings and rankings in Figure 5. The headline result is clear. No single mode won. People picked a mode based on the task, the setting, and their own experience. Question mode was easiest. Block mode felt the most accurate, but it was the hardest to learn. Explore mode was best for discovering what is around you. Their own filters beat Seeing AI, which kept reading and reading. And they beat Be My AI when it was hard to frame a single photo. A key new finding: the unknown-unknowns. You cannot filter for something if you do not know it is there.",
+      "quote": "It's all contextual... I would use different methods based on what I knew about the environment.",
+      "quoteAttrib": "— R4"
+    }
+  ],
+  "designImplications": {
+    "label": "",
+    "title": "Design lessons + contribution type",
+    "bullets": [
+      "**Offer multiple modalities** — let users pick the channel that fits the task and their skill (no single best mode)",
+      "Use a **shared editable substrate**: NL and by-example outputs land in the **block editor** to review and fix",
+      "Help with **unknown-unknowns** — surface what the system can detect (Explore mode) so users can discover filters",
+      "Design for **specificity vs reusability**: super-classes so one filter generalises; honour both broad and narrow needs",
+      "**Primary = ARTIFACT contribution**: a new system + a generalisable filter representation — judged by *what is now possible*",
+      "**Secondary = EMPIRICAL contribution**: study of 12 blind users revealing **challenges of blind end-user programmers**"
+    ],
+    "notes": "[3:45–4:15] What are the design lessons, and what kind of paper is this. First lesson: offer several ways to build, because no one mode is best. Second: send every generated program into one editor users can fix. Third: help people discover what is there, the unknown-unknowns. Fourth: balance specific filters against reusable ones. On contribution type, this is mainly an artifact contribution. They built a new system and a new, general filter representation. We judge it by what it makes newly possible. Building a system is not the same as studying one. The secondary contribution is empirical: the study of twelve blind users, which reveals real challenges for blind end-user programmers.",
+    "quote": "",
+    "quoteAttrib": ""
+  },
+  "myIdea": [
+    {
+      "label": "1",
+      "title": "My idea — the gap: DIY burden + managing a library",
+      "bullets": [
+        "Paper's win is **expressiveness**, but its cost is the **DIY burden** — building filters is real work",
+        "Users must also **manage a library** and remember to launch the right filter at the right moment",
+        "These weaken **approachability** and **efficiency** for the **time-sensitive** and **repetitive** tasks the paper targets",
+        "**Goal: context-aware auto-triggering** — the right saved filter starts itself, no manual launch",
+        "Keep the user **in control**: every auto-trigger is a *suggestion* the user confirms, not silent automation",
+        "Builds on the paper's own future work: trigger `find NUMBER on BUS` on arriving at a bus stop"
+      ],
+      "notes": "[3:45–4:20] Now my own idea. The paper's strength is expressiveness. Blind users can build very specific filters. But there are two real costs. One participant said: people are not developers, why spend five hours to tinker with a program? That is the do-it-yourself burden. Second, even after you build filters, you must manage a library. And you must remember to launch the right one at the right moment. That hurts approachability and efficiency. It hurts exactly the fast and repeated tasks the paper cares about. So my goal is context-aware auto-triggering. The right saved filter starts by itself. But I keep the user in control. Every trigger is a suggestion you confirm, never silent. The paper itself suggests this: start the bus filter when you reach a bus stop.",
+      "quote": "People are not developers... I have to spend 5 hours to tinker with a program for what?",
+      "quoteAttrib": "— R1"
+    },
+    {
+      "label": "2",
+      "title": "My design — triggers as a fourth modality",
+      "bullets": [
+        "Add a **trigger** to any saved filter: by **location** (bus stop), by **time**, or by **object-in-frame**",
+        "Reuse the existing **block editor** as the shared substrate — add a `WHEN ... RUN <filter>` block",
+        "Trigger fires a **gentle audio or Braille prompt**: 'Bus stop nearby — run bus filter?' (respects **social context**)",
+        "Honour the **interaction qualities**: less **interaction cost**, more **discoverability** of which filter fits *now*",
+        "Address **unknown-unknowns** of the library: the app proposes filters you already made for this place",
+        "Stays a **supplement** to the user's intent — confirm-to-run keeps the **direct-manipulation** control the paper values"
+      ],
+      "notes": "[4:20–4:55] Here is the design. I add a trigger to any saved filter. The trigger can be a location, like a bus stop. It can be a time. Or it can be an object appearing in the camera, like a package entering the frame. I do not invent a new screen. I reuse the block editor, the paper's shared editing place. I just add one new block: when this happens, run this filter. When a trigger fires, the app gives a gentle spoken or Braille prompt: a bus stop is near, run your bus filter? The user confirms. This lowers interaction cost. And it helps people discover which saved filter fits right now. Confirm-to-run keeps the user in control. So the system stays a supplement to human intent, not a replacement.",
+      "quote": "",
+      "quoteAttrib": ""
+    }
+  ],
+  "studyTable": {
+    "title": "My study — 9 steps (context-aware auto-triggering)",
+    "rows": [
+      [
+        "1 Goal",
+        "Test if auto-triggering cuts DIY/launch burden without losing user control or trust"
+      ],
+      [
+        "2 Worldview",
+        "Interpretivist-led mixed-methods, like the paper — but add light behavioural counts"
+      ],
+      [
+        "3 Method / design",
+        "Quasi-experiment: within-subjects, manual-launch vs auto-trigger; no formal hypothesis test"
+      ],
+      [
+        "4 Setting + time",
+        "In-the-wild diary deployment, 2 weeks (longitudinal) — fixes paper's single-session lab gap"
+      ],
+      [
+        "5 Design details",
+        "Pre-built triggered filters (bus, mail, grocery); confirm-to-run prompt; VoiceOver + Braille"
+      ],
+      [
+        "6 Participants",
+        "12–16 BLV screen-reader iPhone users via accessibility orgs + snowball; mix prior-AT experience"
+      ],
+      [
+        "7 Procedure",
+        "Onboard + set triggers; live 2 weeks; experience-sampling on each trigger; exit interview"
+      ],
+      [
+        "8 Data",
+        "Qualitative diary + interview (primary); logged trigger accepts/dismisses + perceived-effort Likert"
+      ],
+      [
+        "9 Analysis + findings",
+        "Qualitative themes on trust/burden; descriptive accept-rate; report by task & context, no p-hunting"
+      ]
+    ],
+    "notes": "[4:55–5:30] My study walks the same nine steps. Goal: does auto-triggering cut the burden without losing control or trust. Worldview: interpretivist-led, like the paper, but I add a few behaviour counts. Design: a light within-subjects comparison of manual launch versus auto-trigger, not a strict experiment. Setting and time: this is the big fix. I go in-the-wild for two weeks, longitudinal, because the paper was one single lab session. Design details: pre-built triggered filters for bus, mail, and grocery, with confirm-to-run, accessible by VoiceOver and Braille. Participants: twelve to sixteen blind screen-reader users, recruited like the paper. Procedure: set triggers, live two weeks, a short prompt after each trigger, then an exit interview. Data: mostly diary and interview, plus logs of accepts and dismisses, and an effort rating. Analysis: I group the talk into qualitative themes on trust and burden, with simple descriptive rates."
+  },
+  "cheatSheet": [
+    [
+      "Contribution type",
+      "Artifact (primary) + Empirical (secondary)"
+    ],
+    [
+      "Worldview",
+      "Interpretivist; mixed-methods leaning qualitative"
+    ],
+    [
+      "Design",
+      "Non-experiment — qualitative usability study (no IV/DV, no control)"
+    ],
+    [
+      "Setting",
+      "Mixed: remote (Zoom) + in-person lab with props (not in-the-wild)"
+    ],
+    [
+      "Duration",
+      "One-off, single session, 1.5–3h (avg 2h)"
+    ],
+    [
+      "Data types",
+      "Qualitative think-aloud + interviews; self-reported attitudinal Likert + rankings"
+    ],
+    [
+      "Validity",
+      "Trustworthiness: credibility, transferability, reflexivity (NOT internal/external)"
+    ],
+    [
+      "Modalities",
+      "Input: touch/block, speech-text/NL, camera/by-example; Output: audio (VoiceOver) + Braille + visual context"
+    ],
+    [
+      "Interaction quality improved",
+      "Expressiveness (custom filters); also discoverability + efficiency"
+    ],
+    [
+      "Accessibility/impairment",
+      "Permanent — blind/low-vision screen-reader users"
+    ],
+    [
+      "Wave",
+      "Third wave (empowerment, DIY, lived experience) on first-wave AI engineering"
+    ]
+  ],
+  "weaknesses": {
+    "label": "W",
+    "title": "Weaknesses: limitations & validity",
+    "bullets": [
+      "**Small, self-selected sample** (n=12, snowball) — motivated, tech-comfortable; limits **transferability**",
+      "**No quantitative performance metrics** — task time deliberately not measured; accuracy is **perceived**, not ground-truthed",
+      "**Pilot participants merged** into results despite protocol asymmetry (P1–P2 used **block mode only**)",
+      "**Single-session, lab/remote** with props & images — limited **ecological validity** vs messy real-world camera use",
+      "**Naive adjective implementations** (color/size/location) and a strict tree limiting Explore to find/on only",
+      "Large **expertise variance** on a small n (2 AT pros vs 1 VoiceOver novice)"
+    ],
+    "notes": "[4:15–4:50] Now the weaknesses, strongest first. First, the sample is small and self-selected. Only twelve people, found by snowball sampling. They are likely motivated and tech-comfortable, so we should be careful about generalising. But remember: this is interpretivist, so a small n is acceptable. We judge it on credibility and transferability, not statistical power. Second, there are no performance numbers. Task time was left out on purpose. And accuracy is only what users felt, not measured against the truth. Third, the pilot users were merged in, even though the first two only used block mode. Fourth, it is a single lab or remote session with props, not real-world use, so ecological validity is limited. Finally, the adjectives are admittedly naive, and Explore mode is restricted to two operators.",
+    "quote": "",
+    "quoteAttrib": ""
+  },
+  "contexts": {
+    "label": "C",
+    "title": "ISO contexts of use + accessibility framing",
+    "bullets": [
+      "**Physical**: the user's body & abilities — **blind/low-vision** vision; lighting, camera-aiming, object framing all matter",
+      "**Temporal**: **time-sensitive** tasks (catching a bus) favour fast Question mode or pre-saved filters",
+      "**Task**: often a **secondary/background** task done while moving — repetitive (sorting mail), whole-scene scanning",
+      "**Social**: spoken VoiceOver output can **leak** in quiet/social settings — Braille output is a private alternative",
+      "**Technical**: iPhone + TestFlight, on-device YOLO models + cloud (GPT-4, Cloud Vision) — network dependence in Explore mode",
+      "Impairment is **permanent** (Inclusive Design spectrum); the filtering idea extends to **situational** impairment — anyone wanting one datum from clutter"
+    ],
+    "notes": "[4:50–5:25] Finally, the five ISO contexts of use, and accessibility. Physical: the key factor is the user's body. These users are blind or low-vision, and aiming a camera without sight is hard. Temporal: some tasks are time-sensitive, like catching a bus, which favours fast creation or saved filters. Task: this is often a secondary, background task done while moving, and repetitive, like sorting mail. Social: spoken output can leak to others nearby, so Braille gives a private channel. Technical: it runs on an iPhone, with on-device models and some cloud models, so Explore mode needs a network. On accessibility, the impairment is permanent. But by the persona spectrum, solve for one, extend to many. The filtering idea also helps situational impairment: anyone who wants one fact from a cluttered scene.",
+    "quote": "",
+    "quoteAttrib": ""
+  },
+  "terminology": {
+    "label": "T",
+    "title": "Key terms I must know",
+    "bullets": [
+      "**End-user programming (EUP)**: non-programmers build tools for their own domain — here, blind users as **domain experts**",
+      "**Visual information filtering**: crop the camera to hear only the wanted datum, not a full scene description",
+      "**Multi-modal creation**: same program built three ways — **block** (touch), **NL/Question** (speech), **PBE/Explore** (camera)",
+      "**Unknown-unknowns**: you cannot ask for what you do not know is there — Explore mode targets this",
+      "**Artifact vs empirical contribution** (Wobbrock & Kientz): system + representation is primary; the 12-user study is secondary",
+      "**Trustworthiness** (Lincoln & Guba): credibility, transferability, reflexivity — not internal/external validity",
+      "**Inclusive Design spectrum**: permanent (blind) vs temporary vs situational impairment — filtering generalises to all three"
+    ],
+    "notes": "[5:30–5:50] Quick terms. End-user programming means non-programmers build their own tools. Here blind users are domain experts. A filtering program crops the camera so you hear only what you want. Multi-modal creation means three ways to build the same program: block by touch, question by speech, explore by camera. Unknown-unknowns means you cannot ask for what you do not know is there. On contribution type, this is mainly an artifact paper, with the user study as secondary empirical evidence. Because it is qualitative, we judge it by trustworthiness, not internal validity. And on the inclusive design spectrum, the users have a permanent impairment, but filtering also helps temporary and situational cases.",
+    "quote": "",
+    "quoteAttrib": ""
+  },
+  "qa": {
+    "label": "QA",
+    "title": "One-line answers across the themes",
+    "bullets": [
+      "**Mobile challenge**: hard to aim a camera without sight; my fix triggers a *live* filter so framing is continuous, not one photo",
+      "**Design principle**: keep the user in control — confirm-to-run honours **direct manipulation** over silent agents",
+      "**Modalities**: input = touch/speech/camera; I add **context** (location/time/object) as a trigger; output = audio + **Braille**",
+      "**Interaction qualities**: paper boosts **expressiveness**; I boost **approachability**, **efficiency**, **discoverability**",
+      "**Context of use**: ISO physical/temporal/task/social/technical — my triggers are literally **context-driven**",
+      "**Data & methods**: paper is qualitative think-aloud + Likert; mine adds in-the-wild diary + trigger logs",
+      "**Study design**: paper = one-off lab non-experiment; mine = 2-week field quasi-experiment, judged on **trust** and burden"
+    ],
+    "notes": "[5:50–6:15] Finally, one line per theme. Mobile challenge: aiming a camera blind is hard, so my live trigger keeps the feed running instead of one photo. Design principle: keep the user in control, confirm before running. Modalities: the paper uses touch, speech, and camera; I add context as a trigger, and output stays audio plus Braille. Interaction qualities: the paper raises expressiveness; I raise approachability, efficiency, and discoverability. Context of use: my triggers are literally driven by location, time, and objects. Data and methods: I add a real-world diary and trigger logs to the paper's qualitative core. Study design: I move from a one-off lab session to a two-week field study, judged on trust and burden. Thank you.",
+    "quote": "It's all contextual... I would use different methods based on what I knew about the environment.",
+    "quoteAttrib": "— R4"
+  },
+  "factCheckNotes": "All core numbers verified against the digest and kept: 12 participants (4 pilot + 4 remote + 4 face-to-face), $25/hr, 1.5–3h avg 2h, only 2/12 had programming experience, two operators (find/on), three adjectives (color/size/location), YOLOv8 80 classes, ~20 few-shot GPT-4 examples, 201→29 filtering scenarios, 100 VizWiz queries (~half), 15% CLIP figure. Fixes made: (1) Restored the P1 quote to the verbatim digest form ('There is an abundance of visual information. And sometimes a blind person is short on time, and you really just want the particular piece of information you're curious about.') instead of the spliced version. (2) Removed the unsupported paraphrased R1 quote on slide myIdea-1 ('Would I have to program actions...') from the notes and replaced the featured quote with the verbatim DIY-burden quote 'People are not developers... I have to spend 5 hours to tinker with a program for what?' (note: the bus-stop/'program actions for all the objects' line is real but lives in future work, so I kept only the verbatim R1 burden quote as the slide feature). (3) Removed 'thematic analysis' as a named method in studyTable step 9 and in the weaknesses notes — the digest explicitly warns the paper does NOT name thematic analysis; changed to 'qualitative themes / organized thematically.' (4) Expanded recruitment bullet to 'accessibility orgs, prior contacts + snowball sampling' to match the digest. Classifications verified and consistent: interpretivist worldview correctly paired with trustworthiness validity words (credibility/transferability/reflexivity), NOT internal/external; non-experiment (no IV/DV, no control); permanent blind/low-vision impairment; third-wave-on-first-wave; artifact-primary/empirical-secondary contribution. No positivist validity terms applied. Notes polished into short simple sentences; [m:ss] markers and 9-step structure preserved; total budget ~6 min (~3:45 paper, ~2:15 idea)."
+}
